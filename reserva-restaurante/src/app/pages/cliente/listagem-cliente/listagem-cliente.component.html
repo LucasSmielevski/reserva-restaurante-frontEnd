@@ -1,17 +1,79 @@
-<div>
+<div class="novo-cliente">
   <h2>Listagem de Clientes</h2>
-  <button routerLink="/cliente/cadastro">Cadastrar Novo Cliente</button>
+  <button routerLink="/cliente/cadastro" routerLinkActive="active" id="btn-cadastrar">Cadastrar Novo Cliente</button>
 </div>
-<div>
+<div  class="table-container">
   <table mat-table [dataSource]="clientes" class="mat-elevation-z8">
+
     <ng-container matColumnDef="nome">
       <th mat-header-cell *matHeaderCellDef> Nome </th>
       <td mat-cell *matCellDef="let cliente"> {{cliente.nome}} </td>
     </ng-container>
 
+    <ng-container matColumnDef="sobrenome">
+      <th mat-header-cell *matHeaderCellDef> Sobrenome </th>
+      <td mat-cell *matCellDef="let cliente"> {{cliente.sobrenome}} </td>
+    </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="['nome']"></tr>
-    <tr mat-row *matRowDef="let row; columns: ['nome'];"></tr>
+    <ng-container matColumnDef="cpf">
+      <th mat-header-cell *matHeaderCellDef> CPF </th>
+      <td mat-cell *matCellDef="let cliente"> {{cliente.cpf | cpfFormat}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dataNascimento">
+      <th mat-header-cell *matHeaderCellDef> Data de Nascimento </th>
+      <td mat-cell *matCellDef="let cliente"> {{cliente.dataNascimento | date: 'dd/MM/yyyy'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="sexo">
+      <th mat-header-cell *matHeaderCellDef> Sexo </th>
+      <td mat-cell *matCellDef="let cliente"> {{cliente.sexo}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="telefone">
+      <th mat-header-cell *matHeaderCellDef> Telefone </th>
+      <td mat-cell *matCellDef="let cliente"> {{cliente.telefone | telefoneFormat}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dataCadastro">
+      <th mat-header-cell *matHeaderCellDef> Data de Cadastro </th>
+      <td mat-cell *matCellDef="let cliente"> {{cliente.dataCadastro | date: 'dd/MM/yyyy'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantidadeReservas">
+      <th mat-header-cell *matHeaderCellDef> Reservas </th>
+      <td mat-cell *matCellDef="let cliente"> {{cliente.quantidadeReservas}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="quantidadeValorGasto">
+      <th mat-header-cell *matHeaderCellDef> Valor Gasto </th>
+      <td mat-cell *matCellDef="let cliente"> {{cliente.quantidadeValorGasto}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="bloqueado">
+      <th mat-header-cell *matHeaderCellDef> Bloqueado </th>
+      <td mat-cell *matCellDef="let cliente"> {{cliente.bloqueado ? 'Sim' : 'Não'}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="idRestaurante">
+      <th mat-header-cell *matHeaderCellDef> ID Rest. </th>
+      <td mat-cell *matCellDef="let cliente"> {{cliente.idRestaurante}} </td>
+    </ng-container>
+
+    <!-- Coluna de Ações -->
+    <ng-container matColumnDef="acoes">
+      <th mat-header-cell *matHeaderCellDef> Ações </th>
+      <td mat-cell *matCellDef="let cliente">
+        <button (click)="editar(cliente)" style="width: 100%;" id="editar">Editar</button>
+        <button (click)="excluir(cliente.id)" style="width: 100%;" id="excluir">Excluir</button>
+      </td>
+    </ng-container>
+
+    <!-- Linhas do cabeçalho -->
+    <tr mat-header-row *matHeaderRowDef="['nome', 'sobrenome', 'cpf', 'dataNascimento', 'sexo', 'telefone', 'dataCadastro', 'quantidadeReservas', 'quantidadeValorGasto', 'bloqueado', 'idRestaurante', 'acoes']"></tr>
+
+    <!-- Linhas do corpo -->
+    <tr mat-row *matRowDef="let row; columns: ['nome', 'sobrenome', 'cpf', 'dataNascimento', 'sexo', 'telefone', 'dataCadastro', 'quantidadeReservas', 'quantidadeValorGasto', 'bloqueado', 'idRestaurante', 'acoes'];"></tr>
   </table>
 
   <!-- Paginação -->
@@ -21,4 +83,3 @@
                  (page)="onPageChange($event)">
   </mat-paginator>
 </div>
-

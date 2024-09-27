@@ -5,6 +5,7 @@ import { CadastroMesaComponent } from './cadastro-mesa/cadastro-mesa.component';
 import { ListagemMesaComponent } from './listagem-mesa/listagem-mesa.component';
 
 const routes: Routes = [
+  {path : '', component : ListagemMesaComponent},
   { path: 'cadastro', component: CadastroMesaComponent },
   { path: 'listagem', component: ListagemMesaComponent }
 ];

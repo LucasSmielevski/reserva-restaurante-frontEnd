@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ClienteService } from '../../../services/cliente.service';
+import { ClienteService } from '../services/cliente.service';
 
 @Component({
   selector: 'app-listagem-cliente',
@@ -7,6 +7,12 @@ import { ClienteService } from '../../../services/cliente.service';
   styleUrl: './listagem-cliente.component.scss'
 })
 export class ListagemClienteComponent {
+excluir(arg0: any) {
+throw new Error('Method not implemented.');
+}
+editar(_t138: any) {
+throw new Error('Method not implemented.');
+}
   clientes: any[] = [];
   page: number = 0;
   size: number = 5;

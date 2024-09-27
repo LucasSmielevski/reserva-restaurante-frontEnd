@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { TelefoneFormatPipe } from './pipes/telefone-format.pipe';
 
 @NgModule({
   declarations: [
@@ -12,9 +15,11 @@ import { HttpClientModule } from '@angular/common/http';
     LayoutComponent,
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     AppRoutingModule,
-    HttpClientModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

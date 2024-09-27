@@ -1,0 +1,64 @@
+.cadastro-usuario{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h2{
+  margin-top: 5px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+input, select{
+  height: 25px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+label{
+  margin-top: 8px;
+}
+
+.botoes{
+  display: flex;
+  justify-content: space-between;
+}
+
+#btn-cadastrar{
+  margin: 8px 0px;
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  width: 40%;
+  background-color: #00b33c;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#btn-voltar{
+  margin: 8px 0px;
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  width: 40%;
+  background-color: #f05630;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#btn-cadastrar:hover{
+  background-color: #027e2b;
+}
+
+#btn-voltar:hover{
+  background-color: #ff2600;
+}

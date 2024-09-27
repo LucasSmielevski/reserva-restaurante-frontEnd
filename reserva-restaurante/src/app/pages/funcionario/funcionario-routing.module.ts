@@ -5,6 +5,7 @@ import { CadastroFuncionarioComponent } from './cadastro-funcionario/cadastro-fu
 import { ListagemFuncionarioComponent } from './listagem-funcionario/listagem-funcionario.component';
 
 const routes: Routes = [
+  {path : '', component : ListagemFuncionarioComponent},
   { path: 'cadastro', component: CadastroFuncionarioComponent },
   { path: 'listagem', component: ListagemFuncionarioComponent }
 ];

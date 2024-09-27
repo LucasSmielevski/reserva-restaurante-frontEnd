@@ -1,1 +1,48 @@
-<p>cadastro-cliente works!</p>
+<div class="cadastro-usuario">
+  <h2>Cadastro de Cliente</h2>
+  <form [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+
+    <label for="nome">Nome:</label>
+    <input id="nome" formControlName="nome" type="text">
+    <div *ngIf="clienteForm.get('nome')?.invalid && clienteForm.get('nome')?.touched">
+      O nome é obrigatório.
+    </div>
+
+    <label for="sobrenome">Sobrenome:</label>
+    <input id="sobrenome" formControlName="sobrenome" type="text">
+    <div *ngIf="clienteForm.get('sobrenome')?.invalid && clienteForm.get('sobrenome')?.touched">
+      O sobrenome é obrigatório.
+    </div>
+
+    <label for="cpf">CPF:</label>
+    <input id="cpf" formControlName="cpf" type="text" maxlength="11">
+    <div *ngIf="clienteForm.get('cpf')?.invalid && clienteForm.get('cpf')?.touched">
+      O CPF deve ter 11 dígitos.
+    </div>
+
+    <label for="dataNascimento">Data de Nascimento:</label>
+    <input id="dataNascimento" formControlName="dataNascimento" type="date">
+
+    <label for="sexo">Sexo:</label>
+    <select id="sexo" formControlName="sexo">
+      <option *ngFor="let option of sexoOptions" [value]="option.value">{{ option.label }}</option>
+    </select>
+
+    <label for="telefone">Telefone:</label>
+    <input id="telefone" formControlName="telefone" type="text">
+
+    <label for="idRestaurante">ID do Restaurante:</label>
+    <input id="idRestaurante" formControlName="idRestaurante" type="number">
+
+    <!-- Campos automáticos -->
+    <input type="hidden" formControlName="dataCadastro">
+    <input type="hidden" formControlName="quantidadeReservas">
+    <input type="hidden" formControlName="quantidadeValorGasto">
+    <input type="hidden" formControlName="bloqueado">
+
+    <div class="botoes">
+      <button  id="btn-voltar" routerLink="/cliente/listagem">Voltar</button>
+      <button type="submit" [disabled]="clienteForm.invalid" id="btn-cadastrar">Cadastrar</button>
+    </div>
+  </form>
+</div>

@@ -5,6 +5,7 @@ import { ListagemReservaComponent } from './listagem-reserva/listagem-reserva.co
 import { CadastroReservaComponent } from './cadastro-reserva/cadastro-reserva.component';
 
 const routes: Routes = [
+  {path : '', component: ListagemReservaComponent},
   { path: 'cadastro', component: CadastroReservaComponent },
   { path: 'listagem', component: ListagemReservaComponent }
 ];

@@ -5,6 +5,7 @@ import { CadastroPedidoComponent } from './cadastro-pedido/cadastro-pedido.compo
 import { ListagemPedidoComponent } from './listagem-pedido/listagem-pedido.component';
 
 const routes: Routes = [
+  {path : '', component: ListagemPedidoComponent},
   { path: 'cadastro', component: CadastroPedidoComponent },
   { path: 'listagem', component: ListagemPedidoComponent }
 ];
