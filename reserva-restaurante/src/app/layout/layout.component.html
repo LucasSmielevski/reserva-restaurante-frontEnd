@@ -1,0 +1,20 @@
+<div class="grid-container">
+    <header class="header">
+      <h1>Reserva de Restaurante</h1>
+    </header>
+
+    <nav class="sidebar">
+      <ul>
+        <li><a routerLink="/cliente/listagem"  routerLinkActive="active">Clientes</a></li>
+        <li><a routerLink="/funcionario/listagem" routerLinkActive="active">Funcionários</a></li>
+        <li><a routerLink="/mesa/listagem" routerLinkActive="active">Mesas</a></li>
+        <li><a routerLink="/pedido/listagem" routerLinkActive="active">Pedidos</a></li>
+        <li><a routerLink="/reserva/listagem" routerLinkActive="active">Reservas</a></li>
+        <li><a routerLink="/restaurante/listagem" routerLinkActive="active">Restaurantes</a></li>
+      </ul>
+    </nav>
+
+    <main class="content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
