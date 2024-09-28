@@ -43,8 +43,6 @@ export class CadastroClienteComponent implements OnInit{
   onSubmit(): void {
     if (this.clienteForm.valid) {
       const usuarioCadastro =  this.clienteForm.getRawValue() ;
-
-      console.log(usuarioCadastro)
       this.clienteForm.reset()
       this.clienteService.cadastrarCliente(usuarioCadastro).subscribe(response => {
         console.log('Cliente cadastrado com sucesso!', response);
