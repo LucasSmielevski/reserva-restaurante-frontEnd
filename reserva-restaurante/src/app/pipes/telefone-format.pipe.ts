@@ -7,7 +7,7 @@ export class TelefoneFormatPipe implements PipeTransform {
 
   transform(value: string): string {
 
-    // Remove caracteres não numéricos
+    // Remove caracteres
     const somenteNumeros = value.replace(/\D/g, '');
 
     if (somenteNumeros.length === 11) {
